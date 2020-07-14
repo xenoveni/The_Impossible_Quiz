@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 class SQLliteHelper extends SQLiteOpenHelper {
 
-    private static final String TABLE_USERS = ;
     private Context context;
     private static final String DATABASE_NAME = "Question_db.db";
     private static final int DATABASE_VERSION = 1;
@@ -27,11 +26,14 @@ class SQLliteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE "+TABLE_USERS+" (" +
+        String sql = "CREATE TABLE "+TABLE_QUESTIONS+" (" +
                 COLUMN_ID+" integer primary key autoincrement, " +
-                COLUMN_FNAME+" text not null, " +
-                COLUMN_LNAME+" text not null, " +
-                COLUMN_EMAIL+" text not null);";
+                COLUMN_QUESTION+" text not null, " +
+                COLUMN_ANSWER1+" text not null, " +
+                COLUMN_ANSWER2+" text not null, " +
+                COLUMN_ANSWER3+" text not null, " +
+                COLUMN_ANSWER4+" text not null, " +
+                COLUMN_RIGHTANSWER+" text not null)";
         db.execSQL(sql);
     }
 
